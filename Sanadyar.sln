@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandingApp", "LandingApp\LandingApp.csproj", "{856B4830-5EA8-461B-8364-1DFE46E92381}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandingApi", "LandingApi\LandingApi.csproj", "{4D6F3D09-82AB-4715-9BE7-05050D5E921F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{856B4830-5EA8-461B-8364-1DFE46E92381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{856B4830-5EA8-461B-8364-1DFE46E92381}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{856B4830-5EA8-461B-8364-1DFE46E92381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{856B4830-5EA8-461B-8364-1DFE46E92381}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D6F3D09-82AB-4715-9BE7-05050D5E921F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D6F3D09-82AB-4715-9BE7-05050D5E921F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D6F3D09-82AB-4715-9BE7-05050D5E921F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D6F3D09-82AB-4715-9BE7-05050D5E921F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C39F3D5-9FA7-4CB0-9890-9E5D7C0B0EA7}
+	EndGlobalSection
+EndGlobal

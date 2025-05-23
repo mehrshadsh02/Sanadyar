@@ -1,0 +1,6 @@
+@LandingApi_HostAddress = http://localhost:8100
+
+GET {{LandingApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

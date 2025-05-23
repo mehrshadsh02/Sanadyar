@@ -1,0 +1,26 @@
+﻿@model LandingApp.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "ورود به سامانه سندیار";
+}
+
+<div style="max-width: 400px; margin: auto; padding: 30px; border: 1px solid #ccc; border-radius: 10px; margin-top: 80px; background: #f9f9f9;">
+    <h2 class="text-center">ورود به سامانه</h2>
+    <form asp-action="Login" method="post">
+        <div class="mb-3">
+            <label asp-for="Username" class="form-label">نام کاربری</label>
+            <input asp-for="Username" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label">رمز عبور</label>
+            <input asp-for="Password" type="password" class="form-control" />
+        </div>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">@ViewBag.Error</div>
+        }
+
+        <button type="submit" class="btn btn-primary w-100">ورود</button>
+    </form>
+</div>
