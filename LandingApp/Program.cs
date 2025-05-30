@@ -42,7 +42,7 @@ builder.Services.AddAuthentication("MyCookie")
     });
 
 builder.Services.AddDbContext<SanadyarDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SanadyarDB")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SanadyarDbTemplate")));
 
 var app = builder.Build();
 
