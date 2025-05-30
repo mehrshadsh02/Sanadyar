@@ -1,0 +1,102 @@
+﻿@using System.Security.Claims
+@{
+    Layout = "~/Views/Shared/_Appmenu.cshtml";
+    ViewData["Title"] = "داشبورد حسابداری";
+
+    var roles = User.Claims
+        .Where(c => c.Type == ClaimTypes.Role)
+        .Select(c => c.Value)
+        .ToList();
+
+    var selectedYear = Context.Request.Query["year"].FirstOrDefault() ?? "1404";
+    var availableYears = new[] { "1404", "1405" }; // قابلیت توسعه در آینده
+    var today = DateTime.Now.ToString("yyyy/MM/dd", new System.Globalization.CultureInfo("fa-IR"));
+}
+
+<div class="dashboard-header mb-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="navbar-brand mb-0">سامانه حسابداری سندیار</h1>
+                <p class="welcome-text mb-0">سیستم یکپارچه مدیریت مالی</p>
+            </div>
+            <div class="text-center">
+                <div class="date-display">
+                    <div class="fw-bold">📅 امروز: @today</div>
+                </div>
+                <div class="mt-2">
+                    <form method="get" class="d-flex align-items-center">
+                        <label for="year" class="me-2 text-white">سال مالی:</label>
+                        <select name="year" id="year" class="form-select border-light text-dark" onchange="this.form.submit()" style="width: 120px;">
+                            @foreach (var y in availableYears)
+                            {
+                                <option value="@y" selected="@(selectedYear == y ? "selected" : null)">@y</option>
+                            }
+                        </select>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="row g-4 justify-content-center">
+        @if (roles.Contains("Admin") || roles.Contains("FinancialUser"))
+        {
+            <div class="col-md-6 col-lg-4">
+                <div class="main-card h-100 p-4 text-center">
+                    <i class="card-icon fas fa-file-invoice-dollar"></i>
+                    <h3 class="card-title">ثبت سند مالی</h3>
+                    <p class="card-text">ثبت اسناد مالی و حسابداری با جزئیات کامل</p>
+                    <a href="http://localhost:8201?year=@selectedYear" class="btn btn-primary w-100 rounded-pill mt-3">ورود به بخش</a>
+                </div>
+            </div>
+        }
+
+        @if (roles.Contains("Admin") || roles.Contains("SalaryUser"))
+        {
+            <div class="col-md-6 col-lg-4">
+                <div class="main-card h-100 p-4 text-center">
+                    <i class="card-icon fas fa-hand-holding-usd"></i>
+                    <h3 class="card-title">حقوق و دستمزد</h3>
+                    <p class="card-text">مدیریت حقوق، مزایا و کسورات پرسنل</p>
+                    <a href="http://localhost:8401?year=@selectedYear" class="btn btn-success w-100 rounded-pill mt-3">ورود به بخش</a>
+                </div>
+            </div>
+        }
+
+        @if (roles.Contains("Admin") || roles.Contains("InventoryUser"))
+        {
+            <div class="col-md-6 col-lg-4">
+                <div class="main-card h-100 p-4 text-center">
+                    <i class="card-icon fas fa-warehouse"></i>
+                    <h3 class="card-title">انبارداری</h3>
+                    <p class="card-text">مدیریت موجودی کالا و انبارها</p>
+                    <a href="http://localhost:8301?year=@selectedYear" class="btn btn-warning w-100 rounded-pill mt-3">ورود به بخش</a>
+                </div>
+            </div>
+        }
+
+        @if (roles.Contains("Admin") || roles.Contains("CashUser"))
+        {
+            <div class="col-md-6 col-lg-4">
+                <div class="main-card h-100 p-4 text-center">
+                    <i class="card-icon fas fa-money-bill-wave"></i>
+                    <h3 class="card-title">دریافت و پرداخت</h3>
+                    <p class="card-text">مدیریت چک‌ها و گردش وجوه نقدی</p>
+                    <a href="http://localhost:8501?year=@selectedYear" class="btn btn-info w-100 rounded-pill mt-3">ورود به بخش</a>
+                </div>
+            </div>
+        }
+
+        <div class="col-md-6 col-lg-4">
+            <div class="main-card h-100 p-4 text-center">
+                <i class="card-icon fas fa-chart-line"></i>
+                <h3 class="card-title">گزارشات مالی</h3>
+                <p class="card-text">گزارشات تحلیلی و آماری مالی</p>
+                <a href="http://localhost:8601?year=@selectedYear" class="btn btn-secondary w-100 rounded-pill mt-3">ورود به بخش</a>
+            </div>
+        </div>
+    </div>
+</main>
