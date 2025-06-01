@@ -2,15 +2,13 @@
 using LandingApp.Services;
 using Microsoft.EntityFrameworkCore;
 using DotNetEnv;
+using Microsoft.AspNetCore.DataProtection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // بارگذاری .env
 DotNetEnv.Env.Load();
-var apiBaseUrl = Environment.GetEnvironmentVariable("API_BASE_URL");
-var useAuth = Environment.GetEnvironmentVariable("USE_AUTH") == "true";
 
-// ثبت تنظیمات env به صورت Singleton
 builder.Services.AddSingleton(new AppLinks
 {
     FinanceApp = Environment.GetEnvironmentVariable("FINANCE_APP"),
@@ -20,6 +18,10 @@ builder.Services.AddSingleton(new AppLinks
     ReportApp = Environment.GetEnvironmentVariable("REPORT_APP")
 });
 
+// پیکربندی دیتاپروتکشن برای تولید
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo("D:/mehrshad/keys"))
+    .SetApplicationName("Sanadyar");
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
@@ -46,6 +48,18 @@ builder.Services.AddDbContext<SanadyarDbContext>(options =>
 
 var app = builder.Build();
 
+
+try
+{
+    var scope = app.Services.CreateScope();
+    var db = scope.ServiceProvider.GetRequiredService<SanadyarDbContext>();
+    Console.WriteLine(db.Database.CanConnect() ? "✅ اتصال موفق" : "❌ اتصال شکست خورد");
+}
+catch (Exception ex)
+{
+    Console.WriteLine("❌ خطای دیتابیس در زمان اجرا: " + ex.Message);
+}
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -53,17 +67,16 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseRouting();
 app.UseSession();
-
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapStaticAssets();
-
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Auth}/{action=Login}/{id?}")
-    .WithStaticAssets();
+    pattern: "{controller=Auth}/{action=Login}/{id?}");
+
+
 
 app.Run();
