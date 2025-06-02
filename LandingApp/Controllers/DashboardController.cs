@@ -21,6 +21,7 @@ namespace LandingApp.Controllers
             ViewBag.InventoryApp = _links.InventoryApp;
             ViewBag.CashApp = _links.CashApp;
             ViewBag.ReportApp = _links.ReportApp;
+            ViewBag.TablesApp = _links.TablesApp;
 
             return View();
         }

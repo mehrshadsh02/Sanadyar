@@ -15,7 +15,8 @@ builder.Services.AddSingleton(new AppLinks
     SalaryApp = Environment.GetEnvironmentVariable("SALARY_APP"),
     InventoryApp = Environment.GetEnvironmentVariable("INVENTORY_APP"),
     CashApp = Environment.GetEnvironmentVariable("CASH_APP"),
-    ReportApp = Environment.GetEnvironmentVariable("REPORT_APP")
+    ReportApp = Environment.GetEnvironmentVariable("REPORT_APP"),
+    TablesApp = Environment.GetEnvironmentVariable("TABLES_APP")
 });
 
 // پیکربندی دیتاپروتکشن برای تولید
