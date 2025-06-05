@@ -1,0 +1,6 @@
+@TablesApi_HostAddress = http://localhost:5117
+
+GET {{TablesApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

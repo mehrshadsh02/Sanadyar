@@ -50,16 +50,16 @@ builder.Services.AddDbContext<SanadyarDbContext>(options =>
 var app = builder.Build();
 
 
-try
-{
-    var scope = app.Services.CreateScope();
-    var db = scope.ServiceProvider.GetRequiredService<SanadyarDbContext>();
-    Console.WriteLine(db.Database.CanConnect() ? "✅ اتصال موفق" : "❌ اتصال شکست خورد");
-}
-catch (Exception ex)
-{
-    Console.WriteLine("❌ خطای دیتابیس در زمان اجرا: " + ex.Message);
-}
+//try
+//{
+//    var scope = app.Services.CreateScope();
+//    var db = scope.ServiceProvider.GetRequiredService<SanadyarDbContext>();
+//    Console.WriteLine(db.Database.CanConnect() ? "✅ اتصال موفق" : "❌ اتصال شکست خورد");
+//}
+//catch (Exception ex)
+//{
+//    Console.WriteLine("❌ خطای دیتابیس در زمان اجرا: " + ex.Message);
+//}
 
 if (!app.Environment.IsDevelopment())
 {

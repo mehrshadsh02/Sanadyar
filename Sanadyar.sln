@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75 d17.13
+VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandingApp", "LandingApp\LandingApp.csproj", "{856B4830-5EA8-461B-8364-1DFE46E92381}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandingApi", "LandingApi\LandingApi.csproj", "{4D6F3D09-82AB-4715-9BE7-05050D5E921F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TablesApp", "TablesApp\TablesApp.csproj", "{9075461D-0EAE-45BB-BDF4-1B19EB76BAC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TablesApi", "TablesApi\TablesApi.csproj", "{AB1F57B4-1FF9-4215-BB40-8C839E82BA68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{4D6F3D09-82AB-4715-9BE7-05050D5E921F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D6F3D09-82AB-4715-9BE7-05050D5E921F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D6F3D09-82AB-4715-9BE7-05050D5E921F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9075461D-0EAE-45BB-BDF4-1B19EB76BAC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9075461D-0EAE-45BB-BDF4-1B19EB76BAC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9075461D-0EAE-45BB-BDF4-1B19EB76BAC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9075461D-0EAE-45BB-BDF4-1B19EB76BAC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB1F57B4-1FF9-4215-BB40-8C839E82BA68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB1F57B4-1FF9-4215-BB40-8C839E82BA68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB1F57B4-1FF9-4215-BB40-8C839E82BA68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB1F57B4-1FF9-4215-BB40-8C839E82BA68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
