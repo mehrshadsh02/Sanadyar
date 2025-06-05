@@ -2,8 +2,17 @@
 {
     public class ApiSettings
     {
-        public string SanadyarDbTemplate { get; set; }
-        public bool EnableSecurity { get; set; }
-        public string AllowedCenterIP { get; set; }
+        public string Version { get; set; }
+        public Endpoint Endpoint { get; set; }
+    }
+
+    public class Endpoint
+    {
+        public HttpEndpoint Http { get; set; }
+    }
+
+    public class HttpEndpoint
+    {
+        public string Url { get; set; }
     }
 }
