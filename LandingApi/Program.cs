@@ -22,7 +22,7 @@ builder.Services.AddSingleton<DatabaseService>();
 
 var app = builder.Build();
 
-// ✳️ 3. فعال‌سازی Swagger در حالت توسعه
+// ✳️ 3. فعال‌سازی Swagger در همه محیط‌ها
 //if (app.Environment.IsDevelopment())
 
 app.UseSwagger();
