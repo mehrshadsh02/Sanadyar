@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TablesApp", "TablesApp\Tabl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TablesApi", "TablesApi\TablesApi.csproj", "{AB1F57B4-1FF9-4215-BB40-8C839E82BA68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandingApi.Tests", "LandingApi.Tests\LandingApi.Tests.csproj", "{F9AA3ED4-DFD4-4807-8BD4-84EBC56D4B89}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,18 +69,6 @@ Global
 		{AB1F57B4-1FF9-4215-BB40-8C839E82BA68}.Release|x64.Build.0 = Release|Any CPU
 		{AB1F57B4-1FF9-4215-BB40-8C839E82BA68}.Release|x86.ActiveCfg = Release|Any CPU
 		{AB1F57B4-1FF9-4215-BB40-8C839E82BA68}.Release|x86.Build.0 = Release|Any CPU
-		{F9AA3ED4-DFD4-4807-8BD4-84EBC56D4B89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9AA3ED4-DFD4-4807-8BD4-84EBC56D4B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9AA3ED4-DFD4-4807-8BD4-84EBC56D4B89}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{F9AA3ED4-DFD4-4807-8BD4-84EBC56D4B89}.Debug|x64.Build.0 = Debug|Any CPU
-		{F9AA3ED4-DFD4-4807-8BD4-84EBC56D4B89}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F9AA3ED4-DFD4-4807-8BD4-84EBC56D4B89}.Debug|x86.Build.0 = Debug|Any CPU
-		{F9AA3ED4-DFD4-4807-8BD4-84EBC56D4B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9AA3ED4-DFD4-4807-8BD4-84EBC56D4B89}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9AA3ED4-DFD4-4807-8BD4-84EBC56D4B89}.Release|x64.ActiveCfg = Release|Any CPU
-		{F9AA3ED4-DFD4-4807-8BD4-84EBC56D4B89}.Release|x64.Build.0 = Release|Any CPU
-		{F9AA3ED4-DFD4-4807-8BD4-84EBC56D4B89}.Release|x86.ActiveCfg = Release|Any CPU
-		{F9AA3ED4-DFD4-4807-8BD4-84EBC56D4B89}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

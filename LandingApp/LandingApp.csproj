@@ -12,14 +12,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!-- فایل env را منتقل می‌کند -->
-		<None Include=".env">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>
-		
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="DotNetEnv" Version="3.1.1" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.5" />
@@ -27,6 +19,12 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+
+		<!-- فایل env را منتقل می‌کند -->
+		<None Include=".env">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<Content Remove="appsettings.json" />
 	</ItemGroup>
 
 </Project>

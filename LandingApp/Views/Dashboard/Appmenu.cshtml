@@ -40,6 +40,7 @@
     </div>
 </div>
 
+
 <main class="container">
     <div class="row g-4 justify-content-center">
         @if (roles.Contains("Admin") || roles.Contains("FinancialUser"))
@@ -49,7 +50,7 @@
                     <i class="card-icon fas fa-file-invoice-dollar"></i>
                     <h3 class="card-title">ثبت سند مالی</h3>
                     <p class="card-text">ثبت اسناد مالی و حسابداری با جزئیات کامل</p>
-                    <a href="@ViewBag.FinanceApp?year=@selectedYear" class="btn btn-primary w-100 rounded-pill mt-3">ورود به بخش</a>
+                    <a id="finance-btn" class="btn btn-primary w-100 rounded-pill mt-3">ورود به بخش</a>
                 </div>
             </div>
         }
@@ -61,7 +62,7 @@
                     <i class="card-icon fas fa-hand-holding-usd"></i>
                     <h3 class="card-title">حقوق و دستمزد</h3>
                     <p class="card-text">مدیریت حقوق، مزایا و کسورات پرسنل</p>
-                    <a href="@ViewBag.SalaryApp?year=@selectedYear" class="btn btn-success w-100 rounded-pill mt-3">ورود به بخش</a>
+                    <a id="salary-btn" class="btn btn-success w-100 rounded-pill mt-3">ورود به بخش</a>
                 </div>
             </div>
         }
@@ -73,7 +74,7 @@
                     <i class="card-icon fas fa-warehouse"></i>
                     <h3 class="card-title">انبارداری</h3>
                     <p class="card-text">مدیریت موجودی کالا و انبارها</p>
-                    <a href="@ViewBag.InventoryApp?year=@selectedYear" class="btn btn-warning w-100 rounded-pill mt-3">ورود به بخش</a>
+                    <a id="inventory-btn" class="btn btn-warning w-100 rounded-pill mt-3">ورود به بخش</a>
                 </div>
             </div>
         }
@@ -85,7 +86,7 @@
                     <i class="card-icon fas fa-money-bill-wave"></i>
                     <h3 class="card-title">دریافت و پرداخت</h3>
                     <p class="card-text">مدیریت چک‌ها و گردش وجوه نقدی</p>
-                    <a href="@ViewBag.CashApp?year=@selectedYear" class="btn btn-info w-100 rounded-pill mt-3">ورود به بخش</a>
+                    <a id="cash-btn" class="btn btn-info w-100 rounded-pill mt-3">ورود به بخش</a>
                 </div>
             </div>
         }
@@ -95,7 +96,7 @@
                 <i class="card-icon fas fa-chart-line"></i>
                 <h3 class="card-title">گزارشات مالی</h3>
                 <p class="card-text">گزارشات تحلیلی و آماری مالی</p>
-                <a href="@ViewBag.ReportApp?year=@selectedYear" class="btn btn-secondary w-100 rounded-pill mt-3">ورود به بخش</a>
+                <a id="report-btn" class="btn btn-secondary w-100 rounded-pill mt-3">ورود به بخش</a>
             </div>
         </div>
 
@@ -104,9 +105,20 @@
                 <i class="card-icon fas fa-table"></i>
                 <h3 class="card-title">مدیریت جداول</h3>
                 <p class="card-text">مدیریت حساب‌ها، مراکز و تنظیمات پایه</p>
-                <a href="@ViewBag.TablesApp?year=@selectedYear" class="btn btn-dark w-100 rounded-pill mt-3">ورود به بخش</a>
+                <a id="tables-btn" class="btn btn-dark w-100 rounded-pill mt-3">ورود به بخش</a>
             </div>
         </div>
-
     </div>
 </main>
+
+<script>
+    const selectedYear = "@selectedYear";
+
+    document.getElementById("finance-btn").href = window.__env.financeApp + "?year=" + selectedYear;
+    document.getElementById("salary-btn").href = window.__env.salaryApp + "?year=" + selectedYear;
+    document.getElementById("inventory-btn").href = window.__env.inventoryApp + "?year=" + selectedYear;
+    document.getElementById("cash-btn").href = window.__env.cashApp + "?year=" + selectedYear;
+    document.getElementById("report-btn").href = window.__env.reportApp + "?year=" + selectedYear;
+    document.getElementById("tables-btn").href = window.__env.tablesApp + "?year=" + selectedYear;
+</script>
+

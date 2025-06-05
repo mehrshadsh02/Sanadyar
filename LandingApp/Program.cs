@@ -9,15 +9,20 @@ var builder = WebApplication.CreateBuilder(args);
 // بارگذاری .env
 DotNetEnv.Env.Load();
 
-builder.Services.AddSingleton(new AppLinks
-{
-    FinanceApp = Environment.GetEnvironmentVariable("FINANCE_APP"),
-    SalaryApp = Environment.GetEnvironmentVariable("SALARY_APP"),
-    InventoryApp = Environment.GetEnvironmentVariable("INVENTORY_APP"),
-    CashApp = Environment.GetEnvironmentVariable("CASH_APP"),
-    ReportApp = Environment.GetEnvironmentVariable("REPORT_APP"),
-    TablesApp = Environment.GetEnvironmentVariable("TABLES_APP")
-});
+
+/////////////////// دیگه لازم نیست چون از env میخونیم
+///
+
+//builder.Services.AddSingleton(new AppLinks
+//{
+//    FinanceApp = Environment.GetEnvironmentVariable("FINANCE_APP"),
+//    SalaryApp = Environment.GetEnvironmentVariable("SALARY_APP"),
+//    InventoryApp = Environment.GetEnvironmentVariable("INVENTORY_APP"),
+//    CashApp = Environment.GetEnvironmentVariable("CASH_APP"),
+//    ReportApp = Environment.GetEnvironmentVariable("REPORT_APP"),
+//    TablesApp = Environment.GetEnvironmentVariable("TABLES_APP")
+//});
+//////////////////////////////////////
 
 // پیکربندی دیتاپروتکشن برای تولید
 builder.Services.AddDataProtection()
