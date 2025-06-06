@@ -2,9 +2,9 @@
 {
     public class SiteSettings
     {
-        public bool Careplan { get; set; }
-        public bool Tracing { get; set; }
-        public ConnectionStrings ConnectionStrings { get; set; }
+        //public bool Careplan { get; set; }
+        //public bool Tracing { get; set; }
+        public ConnectionStringsConfig ConnectionStrings { get; set; }
     }
 
     public class ConnectionStrings

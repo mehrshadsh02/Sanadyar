@@ -111,7 +111,11 @@
     </div>
 </main>
 
+<script src="/js/env.js"></script>
+
 <script>
+    console.log("env loaded", window.__env);
+
     const selectedYear = "@selectedYear";
 
     document.getElementById("finance-btn").href = window.__env.financeApp + "?year=" + selectedYear;

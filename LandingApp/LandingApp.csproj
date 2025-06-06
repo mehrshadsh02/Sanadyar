@@ -24,6 +24,7 @@
 		<None Include=".env">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+		<None Include="wwwroot\js\env.js" />
 		<Content Remove="appsettings.json" />
 	</ItemGroup>
 

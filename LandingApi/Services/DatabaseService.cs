@@ -7,11 +7,9 @@ namespace LandingApi.Services
     {
         private readonly string _connectionString;
 
-        public DatabaseService(IOptions<ApiSettings> options)
+        public DatabaseService(IOptions<SiteSettings> settings)
         {
-            var template = options.Value.SanadyarDbTemplate;
-            var currentYear = "1404"; // بعداً داینامیک کن
-            _connectionString = template.Replace("{year}", currentYear);
+            _connectionString = settings.Value.ConnectionStrings.SanadyarDbTemplate.Replace("{year}", "1404"); // بعداً داینامیک کن
         }
 
         public string GetConnectionString() => _connectionString;

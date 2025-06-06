@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<ApiSettings>(builder.Configuration.GetSection("ApiSettings"));
 builder.Services.Configure<SiteSettings>(builder.Configuration.GetSection("SiteSettings"));
 builder.Services.Configure<HttpBaseUrls>(builder.Configuration.GetSection("HttpBaseUrls"));
+builder.Services.Configure<SiteSettings>(builder.Configuration.GetSection("SiteSettings"));
+
 
 // 🟢 Services
 builder.Services.AddControllers();
